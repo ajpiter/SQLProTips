@@ -1,2 +1,16 @@
 Find the raw data in the RProTips > Projects > ZillowUnemployment > Raw Data 
 Files were cleaned in R 
+
+Zillow Files were organially sourced from the Zillow Data Research Site 
+https://www.zillow.com/research/data/
+
+Unemployment numbers were organially sourced from the Bureau of Labor Statistics 
+https://www.bls.gov/web/metro/laummtrk.htm
+
+The purpose of this project was to build a database. 
+For simplicity file variables were reduced. 
+In the case of time series variables every variable was elimniated from the cleaned data file except 
+August 2018
+August 2019 
+August 2020
+
