@@ -1,1 +1,6 @@
+Project focus is creating a database in MySQL. 
+The database will contain information on 
+unemployment and key home value indicators by metro area. 
 
+The goal is to see if metro areas experiencing increased Unemployment in August of 2020
+have also seen changes in the housing market. 
