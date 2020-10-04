@@ -4,8 +4,14 @@ use ZillowUnemployment;
 
 CREATE TABLE Unemployment(
 MetroArea VARCHAR(30),
-Unemployed083120 NUMERIC(4,2));
-/* PRIMARY KEY (MetroArea)*/
+Unemployed083120 NUMERIC(4,2),
+PRIMARY KEY (MetroArea));
+
+CREATE TABLE Metro_Area(
+RegionID	INTEGER,
+MetroArea	VARCHAR(30),
+PRIMARY KEY (RegionID), 
+FOREIGN KEY (MetroArea));
 
 CREATE TABLE Z_Home_Inventory(
 RegionID	INTEGER,
@@ -15,8 +21,8 @@ Inventory083118	INTEGER,
 Inventory083119	INTEGER,
 Inventory083120	INTEGER,
 InventoryYOYChange INTEGER, 
-PRIMARY KEY (RegionID));
-/*FOREIGN KEY (MetroArea)); */ 
+PRIMARY KEY (RegionID),
+FOREIGN KEY (MetroArea)); 
 
 CREATE TABLE Z_Home_Value(
 RegionID INTEGER,	
@@ -26,8 +32,8 @@ HomeValue083118	INTEGER,
 HomeValue083119	INTEGER,
 HomeValue083120	INTEGER,
 HomeValueYOYChange INTEGER,
-PRIMARY KEY (RegionID));
-/* FOREIGN KEY (MetroArea)); */ 
+PRIMARY KEY (RegionID),
+FOREIGN KEY (MetroArea)); 
 
 CREATE TABLE Z_Price_Cut_Percent(
 RegionID	INTEGER, 
@@ -37,8 +43,8 @@ PriceCut083118Per	NUMERIC(4,2),
 PriceCut083119Per	NUMERIC(4,2),
 PriceCut083120Per	NUMERIC(4,2),
 PriceCutYOYChangePer NUMERIC(4,2),
-PRIMARY KEY (RegionID));
-/* FOREIGN KEY (MetroArea)); */
+PRIMARY KEY (RegionID),
+FOREIGN KEY (MetroArea)); 
 
 CREATE TABLE Z_PRICE_CUT_MEAN(
 RegionID	INTEGER, 
@@ -48,7 +54,8 @@ MeanPriceCut83118	INTEGER,
 MeanPriceCut83119	INTEGER, 
 MeanPriceCut83120	INTEGER, 
 MeanPriceCutYOYChange INTEGER, 
-PRIMARY KEY (RegionID));
+PRIMARY KEY (RegionID),
+FOREIGN KEY (MetroArea)); 
 
 CREATE TABLE Z_MEDIAN_LIST_PRICE(
 RegionID	INTEGER,
@@ -58,7 +65,8 @@ ListPriceYOYChange083118	INTEGER,
 ListPriceYOYChange083119	INTEGER, 
 ListPriceYOYChange083120	INTEGER, 
 ListPriceYOYChange			INTEGER,
-PRIMARY KEY (RegionID));
+PRIMARY KEY (RegionID),
+FOREIGN KEY (MetroArea)); 
 
 CREATE TABLE Z_MEDIAN_SALE_PRICE(
 RegionID	INTEGER, 
@@ -67,7 +75,8 @@ StateAbv	VARCHAR(2),
 MedSalePrice083119	INTEGER, 
 MedSalePrice083120	INTEGER, 
 MedSalePriceYOYChange INTEGER,
-PRIMARY KEY(RegionID));
+PRIMARY KEY (RegionID),
+FOREIGN KEY (MetroArea)); 
 
 CREATE TABLE Z_PENDING_LISTINGS(
 RegionID	INTEGER, 
@@ -77,4 +86,5 @@ NewListings083118	INTEGER,
 NewListings083119	INTEGER, 
 NewListings083120	INTEGER, 
 NewListingsYOYChange INTEGER, 
-PRIMARY KEY(RegionID)); 
+PRIMARY KEY (RegionID),
+FOREIGN KEY (MetroArea)); 
